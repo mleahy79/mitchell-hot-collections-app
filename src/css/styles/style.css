@@ -2628,6 +2628,22 @@ footer:not(.footer-light) #form_subscribe.form-dark input[type="text"] {
   top: -35px;
   margin: 0 0 0 -8px;
 }
+.arrow {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+  background: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.arrow:hover {
+  background: #eee;
+}
 
 /* ================================================== */
 
@@ -16713,4 +16729,8 @@ img {
 
 .no-cursor {
   cursor: not-allowed;
+}
+@keyframes shimmer {
+  0% { back-ground-position: 200% 0;}
+  100% { background-position: -200% 0;}
 }
