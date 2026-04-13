@@ -3,8 +3,19 @@ import AuthorBanner from "../images/author_banner.jpg";
 import AuthorItems from "../components/author/AuthorItems";
 import { Link } from "react-router-dom";
 import AuthorImage from "../images/author_thumbnail.jpg";
+import { useEffect, useState } from "react";
 
 const Author = () => {
+  const [data, setData] = useState(null);
+  useEffect(() => {
+    fetch(
+      "https://us-central1-nft-cloud-functions.cloudfunctions.net/authors?author=73855012",
+    )
+      .then((response) => response.json())
+      .then((data) => setData(data))
+      .catch((error) => console.error("Error fetching data:", error));
+  }, []);
+
   return (
     <div id="wrapper">
       <div className="no-bottom no-top" id="content">
@@ -23,6 +34,7 @@ const Author = () => {
             <div className="row">
               <div className="col-md-12">
                 <div className="d_profile de-flex">
+                  
                   <div className="de-flex-col">
                     <div className="profile_avatar">
                       <img src={AuthorImage} alt="" />
@@ -55,7 +67,7 @@ const Author = () => {
 
               <div className="col-md-12">
                 <div className="de_tab tab_simple">
-                  <AuthorItems />
+                  <AuthorItems nftCollection={data?.nftCollection} />
                 </div>
               </div>
             </div>
