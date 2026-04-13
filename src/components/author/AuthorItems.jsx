@@ -101,6 +101,7 @@ const AuthorItems = ({ nftCollection }) => {
                   <div className="nft__item_like">
                     <i className="fa fa-heart"></i>
                     <span></span>
+                    
                   </div>
                 </div>
               </div>

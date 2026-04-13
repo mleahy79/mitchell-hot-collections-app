@@ -4,17 +4,25 @@ import AuthorItems from "../components/author/AuthorItems";
 import { Link } from "react-router-dom";
 import AuthorImage from "../images/author_thumbnail.jpg";
 import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+
 
 const Author = () => {
+  const { authorId } = useParams();
+  const [follow, setFollow] = useState(false);
+  const [followCount, setFollowCount] = useState(573);
+
   const [data, setData] = useState(null);
   useEffect(() => {
     fetch(
-      "https://us-central1-nft-cloud-functions.cloudfunctions.net/authors?author=73855012",
+      `https://us-central1-nft-cloud-functions.cloudfunctions.net/author/${authorId}`
     )
       .then((response) => response.json())
       .then((data) => setData(data))
       .catch((error) => console.error("Error fetching data:", error));
-  }, []);
+  }, [authorId]);
+
+  if (!data) return <div>Loading...</div>;
 
   return (
     <div id="wrapper">
@@ -56,9 +64,13 @@ const Author = () => {
                   </div>
                   <div className="profile_follow de-flex">
                     <div className="de-flex-col">
-                      <div className="profile_follower">573 followers</div>
-                      <Link to="#" className="btn-main">
-                        Follow
+                      <div className="profile_follower">{followCount} followers</div>
+                      <Link to="#" className="btn-main" onClick={(e) => {
+                        e.preventDefault();
+                        setFollow(!follow);
+                        setFollowCount(follow ? followCount - 1 : followCount + 1);
+                      }}>
+                        {follow ? "Unfollow" : "Follow"}  
                       </Link>
                     </div>
                   </div>
