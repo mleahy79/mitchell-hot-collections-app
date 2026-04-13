@@ -119,16 +119,16 @@ const NewItems = () => {
                       key={index}
                     >
                       <div className="nft_item">
-                        <div style={{ ...skeletonStyle, height: "180px" }} />
                         <div
                           style={{
                             ...skeletonStyle,
-                            height: "40px",
-                            width: "40px",
+                            height: "50px",
+                            width: "50px",
                             borderRadius: "50%",
                             margin: "8px auto",
                           }}
                         />
+                        <div style={{ ...skeletonStyle, height: "180px" }} />
                         <div
                           style={{
                             ...skeletonStyle,
