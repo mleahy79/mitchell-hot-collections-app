@@ -1,9 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import AuthorImage from "../../images/author_thumbnail.jpg";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import nftImage from "../../images/nftImage.jpg";
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
 
@@ -173,13 +171,13 @@ const NewItems = () => {
                               <button>Buy Now</button>
                               <div className="nft__item_share">
                                 <h4>Share</h4>
-                                <a href="" target="_blank" rel="noreferrer">
+                                <a href="#" target="_blank" rel="noreferrer">
                                   <i className="fa fa-facebook fa-lg"></i>
                                 </a>
-                                <a href="" target="_blank" rel="noreferrer">
+                                <a href="#" target="_blank" rel="noreferrer">
                                   <i className="fa fa-twitter fa-lg"></i>
                                 </a>
-                                <a href="">
+                                <a href="#" target="_blank" rel="noreferrer">
                                   <i className="fa fa-envelope fa-lg"></i>
                                 </a>
                               </div>
