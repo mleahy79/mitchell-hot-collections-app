@@ -9,7 +9,7 @@ const LandingIntro = () => {
             <div className="feature-box f-boxed style-3">
               <i
                 className="bg-color-2 i-boxed icon_wallet"
-                data-aos="fade-up"
+                data-aos="fade-in"
                 data-aos-duration="800"
                 data-aos-delay="100"
               ></i>
@@ -38,8 +38,9 @@ const LandingIntro = () => {
             <div className="feature-box f-boxed style-3">
               <i
                 className="bg-color-2 i-boxed icon_wallet"
-                data-aos="fade-up"
+                data-aos="fade-in"
                 data-aos-duration="800"
+                data-aos-delay="200"
               ></i>
               <div className="text">
                 <h4
@@ -66,7 +67,7 @@ const LandingIntro = () => {
             <div className="feature-box f-boxed style-3">
               <i
                 className="bg-color-2 i-boxed icon_wallet"
-                data-aos="fade-up"
+                data-aos="fade-in"
                 data-aos-duration="800"
               ></i>
               <div className="text">

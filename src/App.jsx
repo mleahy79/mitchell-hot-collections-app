@@ -16,6 +16,7 @@ axios.defaults.baseURL = "http://us-central1-nft-cloud-functions.cloudfunctions.
 function App() {
   useEffect(() => {
     AOS.init({
+      easing: 'ease-in-sine',
       offset: 0,
       once: false,
     });
