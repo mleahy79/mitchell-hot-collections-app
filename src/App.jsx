@@ -5,6 +5,7 @@ import Explore from "./pages/Explore";
 import Author from "./pages/Author";
 import ItemDetails from "./pages/ItemDetails";
 import Nav from "./components/Nav";
+import ScrollToTop from "./components/ScrollToTop";
 import Footer from "./components/Footer";
 import axios from "axios";
 import AOS from 'aos';
@@ -24,6 +25,7 @@ function App() {
 
   return (
     <Router>
+      <ScrollToTop />
       <Nav />
       <Routes>
         <Route path="/" element={<Home />} />

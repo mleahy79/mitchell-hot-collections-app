@@ -172,19 +172,21 @@ const ExploreItems = () => {
               </div>
             </div>
           ))}
-       <div className="col-md-12 text-center">
-        <button
-          onClick={() => {
-            const newCount = visibleCount + 4;
-            setVisibleCount(newCount);
-            setItems(allItems.slice(0, newCount));
-          }}
-          id="loadmore"
-          className="btn-main lead"
-        >
-          Load more
-        </button>
-      </div>
+      {items.length < allItems.length && (
+        <div className="col-md-12 text-center">
+          <button
+            onClick={() => {
+              const newCount = visibleCount + 4;
+              setVisibleCount(newCount);
+              setItems(allItems.slice(0, newCount));
+            }}
+            id="loadmore"
+            className="btn-main lead"
+          >
+            Load more
+          </button>
+        </div>
+      )}
     </>
   );
 };
